@@ -1,0 +1,22 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.6.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'br.com.jonss'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.cloud:spring-cloud-starter-openfeign:2.1.2.RELEASE'
+	compile group: 'org.springframework.cloud', name: 'spring-cloud-dependencies', version: 'Greenwich.RELEASE', ext: 'pom'
+	implementation 'io.github.openfeign:feign-okhttp'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
